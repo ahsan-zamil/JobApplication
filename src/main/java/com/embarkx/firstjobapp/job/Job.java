@@ -1,28 +1,29 @@
 package com.embarkx.firstjobapp.job;
 
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "job_table")
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
-    private String minsalary;
-    private String maxsalary;
+    private String minSalary;
+    private String maxSalary;
     private String location;
 
-    public Job(Long id, String title, String description, String minsalary, String maxsalary, String location) {
+    public Job() {
+    }
+
+    public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.minsalary = minsalary;
-        this.maxsalary = maxsalary;
+        this.minSalary = minSalary;
+        this.maxSalary = maxSalary;
         this.location = location;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Long getId() {
@@ -41,20 +42,28 @@ public class Job {
         this.title = title;
     }
 
-    public String getMinsalary() {
-        return minsalary;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMinsalary(String minsalary) {
-        this.minsalary = minsalary;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getMaxsalary() {
-        return maxsalary;
+    public String getMinSalary() {
+        return minSalary;
     }
 
-    public void setMaxsalary(String maxsalary) {
-        this.maxsalary = maxsalary;
+    public void setMinSalary(String minSalary) {
+        this.minSalary = minSalary;
+    }
+
+    public String getMaxSalary() {
+        return maxSalary;
+    }
+
+    public void setMaxSalary(String maxSalary) {
+        this.maxSalary = maxSalary;
     }
 
     public String getLocation() {
