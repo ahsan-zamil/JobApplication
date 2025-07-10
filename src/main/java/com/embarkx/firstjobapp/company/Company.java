@@ -20,7 +20,7 @@ public class Company {
     private List<Job> jobs;
 
     @OneToMany(mappedBy = "company")
-     private List<Review> reviews;
+    private List<Review> reviews;
 
     public Company() {
     }
